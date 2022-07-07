@@ -39,4 +39,9 @@ python -m django <command> [options]
 manage.py migrate my_app 0005
 ```
 
+`runserver` — команда для запуска **тестового** сервера, можно указывать порт и многие другие настройки
+
+Не применяется на продакшене, только для разработки
+
+
 Лекция [тут](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson36.md)
