@@ -1,6 +1,6 @@
 # Django REST Framework
 
-Django Rest Framework (DRF) — это библиотека, которая работает со стандартными 
+Django Rest Framework (DRF) — это пекедж (пакет), который работает со стандартными 
 [моделями](Django-MVT-Model.md) Django 
 для создания [API](REST%20API.md) для проекта c применением [REST](REST%20API.md) архитектуры.
 
