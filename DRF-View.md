@@ -50,8 +50,6 @@ API (endpoint) можно описать:
 
 
 
-
-
 Лекция [тут](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson38.md)
 
 
