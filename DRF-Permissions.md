@@ -66,3 +66,8 @@ permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
     "detail": "Authentication credentials were not provided."
 }
 ```
+
+Лекция [тут](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson39.md)
+
+Youtube [тут](https://www.youtube.com/watch?v=PQwDeI0DDW4)
+
