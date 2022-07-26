@@ -41,7 +41,7 @@ for item in cart:             VS       cashier = [item for item in cart]
 **List Comprehension** работает при том быстрее чем `for` или `while`
 
 Примеры:
-```
+```python
 >>> inp = input("Целые числа через пробел: ")
 Целые числа через пробел: >? 1 2 3 4
 >>> inp
