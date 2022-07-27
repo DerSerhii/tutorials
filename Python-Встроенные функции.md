@@ -58,12 +58,26 @@ Prompt - подсказка пользователю
 >>> inp
 '1 2 3 4'
 ```
+- `help([object])` — вызов встроенной справочной системы
+```python
+>>> help(print)
+Help on built-in function print in module builtins:
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+```
 
 ### Встроенные функции с [итератором](Паттерн-Итератор.md)
 
 - `iter(x)` — возвращает объект итератора (эквивалентно `x.__iter__()`)
 - `next(x)` — возвращает следующий элемент итератора (эквивалентно `x.__next__()`) 
-```
+```python
 >>> l = [5, 3, 7]
 >>> it = iter(l)
 >>> it
@@ -83,7 +97,7 @@ StopIteration
 ```
 - `zip(*iters)` — итератор, возвращающий [кортежи](Python-Tuple%20(Кортежи).md),
 состоящие из соответствующих элементов аргументов-последовательностей
-```
+```python
 >>> number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 >>> char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 >>> f = zip(number, char)
@@ -94,8 +108,7 @@ StopIteration
 ```
 - `map(func, *iterables)` — итератор, получившийся после применения к каждому 
 элементу последовательности функции `func`<br>
-Возвращает *генератор* (Python 3.x) или [список](Python-List%20(Списки).md) (Python 2.x) 
-```
+```python
 >>> number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 >>> char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 >>> my_zip = map(lambda x, y: (x, y), number, char)
@@ -107,7 +120,7 @@ StopIteration
 
 - `filter(func, iterable)` — возвращает [итератор](Паттерн-Итератор.md) из тех 
 элементов, для которых `func` возвращает истину
-```
+```python
 >>> l = [55, 20, 66, 90, 68, 59, 76, 60, 88, 74, 81, 65, 5, 71]
 >>> f = filter(lambda x: x > 70, l)
 >>> f
@@ -127,7 +140,7 @@ StopIteration
 `bin(x)` — Преобразование целого числа в двоичную строку.
 
 - `callable(x)` — возвращает `True` для объекта, поддерживающего вызов (как функции)
-```
+```python
 >>> a = print 
 >>> b = 133
 >>> callable(a)
@@ -159,20 +172,7 @@ False
 
 `hash(x)` — Возвращает хеш указанного объекта.
 
-- `help([object])` — вызов встроенной справочной системы
-```
->>> help(print)
-Help on built-in function print in module builtins:
-print(...)
-    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
-    
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
-```
+
 
 `hex(х)` — Преобразование целого числа в шестнадцатеричную строку.
 
