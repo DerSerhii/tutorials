@@ -26,6 +26,30 @@ def get(self, request, *args, **kwargs):
 
 Лекция по [TemplateView](https://github.com/DerSerhii/PythonCources/blob/master/lesson33.md#class-templateview)
 
+
+## DetailView
+
+**DetailView** — класс view, который необходим для того что бы сделать страницу для 
+просмотра одного объекта.
+
+Ему необходимо передать `pk` либо `slug` и это позволит отобразить один объект (статью, товар итд.)
+
+Если `template_name` не указан явно, то Django, будет пытаться отобразить 
+`templates/app_name/model_detail.html`,<br> 
+где `app_name` - название приложения, `model` - название модели, `detail` - константа.
+
+Важные параметры:
+```python
+pk_url_kwarg = 'pk'  # Как переменная называется в urls.py, например `<int:my_id>`
+queryset = None  # если указан, то возможность ограничить доступ только для части объектов (например, убрать из возможности обновления деактивированные объекты).
+template_name = None  # указать имя шаблона.
+model = None  # класс модели, если не указан queryset, сгенерирует queryset из модели.
+```
+Важные методы:<br>
+`get_queryset()` - переопределить queryset<br>
+`get_context_data()` - метод возвращающий данные, которые будут добавлены в контекст<br>
+`get_object()` - определяет логику получения объекта
+
 ## UpdateView
 
 **UpdateView** — класс view для обновления объекта c отображением на темплейте.
