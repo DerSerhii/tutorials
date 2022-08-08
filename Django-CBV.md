@@ -73,8 +73,8 @@ fields = None  # Поля модели, если не указана форма
 ```
 ***Важные методы:*** <br>
 Все методы из `FormView`, но дополненные под создание объекта: <br>
-`post()` — предварительно добавит классу атрибут `self.object = None` <br>
-`form_valid()` — дополнительно выполнит такую строку `self.object = form.save()` <br>
+- `post()` — предварительно добавит классу атрибут `self.object = None` <br>
+- `form_valid()` — дополнительно выполнит такую строку `self.object = form.save()` <br>
 
 Лекция по [CreateView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md#class-createview)
 
