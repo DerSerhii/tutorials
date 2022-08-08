@@ -50,6 +50,36 @@ model = None  # класс модели, если не указан queryset, с
 `get_context_data()` - метод возвращающий данные, которые будут добавлены в контекст<br>
 `get_object()` - определяет логику получения объекта
 
+
+## CreateView
+
+**CreateView** — класс view для создания объектов.
+
+В класс нужно передать либо `ModelForm`, либо модель и поля, что бы класс 
+сам сгенерировал такую форму.
+
+Метод `get` откроет страницу, на которой будет переменая `form`, как и другие *view*,
+к которым добавляется форма.
+
+Метод `post` выполнит те же действия, что и `FormView`, но в случае валидности 
+формы, предварительно выполнит `form.save()`.
+
+***Важные параметры:***<br>
+Такие же, как у `FormView` и еще свои:
+```python
+form_class = None  # Должен принимать ModelForm
+model = None  # Можно указать модель вместо формы, что бы сгенерировать её на ходу
+fields = None  # Поля модели, если не указана форма
+```
+***Важные методы:*** <br>
+Все методы из `FormView`, но дополненные под создание объекта: <br>
+`post()` — предварительно добавит классу атрибут `self.object = None` <br>
+`form_valid()` — дополнительно выполнит такую строку `self.object = form.save()` <br>
+
+Лекция по [CreateView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md#class-createview)
+
+
+
 ## UpdateView
 
 **UpdateView** — класс view для обновления объекта c отображением на темплейте.
@@ -67,5 +97,4 @@ def get_initial():
     return {'template' : 'foo' }
 ```
 
-Лекция по [UpdateView](https://github.com/DerSerhii/PythonCources/blob/master/lesson33.md#class-updateview)
-
+Лекция по [UpdateView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md)
