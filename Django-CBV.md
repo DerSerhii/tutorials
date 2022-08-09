@@ -38,17 +38,52 @@ def get(self, request, *args, **kwargs):
 `templates/app_name/model_detail.html`,<br> 
 где `app_name` - название приложения, `model` - название модели, `detail` - константа.
 
-Важные параметры:
+***Важные параметры:***
 ```python
 pk_url_kwarg = 'pk'  # Как переменная называется в urls.py, например `<int:my_id>`
 queryset = None  # если указан, то возможность ограничить доступ только для части объектов (например, убрать из возможности обновления деактивированные объекты).
 template_name = None  # указать имя шаблона.
 model = None  # класс модели, если не указан queryset, сгенерирует queryset из модели.
 ```
-Важные методы:<br>
+***Важные методы:***<br>
 `get_queryset()` - переопределить queryset<br>
 `get_context_data()` - метод возвращающий данные, которые будут добавлены в контекст<br>
 `get_object()` - определяет логику получения объекта
+
+
+## FormView
+
+**FormView** — класс view необходимый для обработки формы.
+
+***Важные параметры:***<br>
+Такие же, как у `TemplateView` и еще свои:
+```python
+form_class = None  # сам класс формы
+success_url = None  # На какую страницу перейти если форма была валидна
+initial = {}  # Словарь с базовыми значениями формы
+```
+***Важные методы:***
+
+Тут наконец определён метод `post`:
+```python
+def post(self, request, *args, **kwargs):
+    """
+    Handle POST requests: instantiate a form instance with the passed
+    POST variables and then check if it's valid.
+    """
+    form = self.get_form()
+    if form.is_valid():
+        return self.form_valid(form)
+    else:
+        return self.form_invalid(form)
+```
+Так же все методы из `TemplateView`:<br>
+`get_context_data` — дополнительно добавляет переменную `form` в темплейт<br>
+`get_form` - получить объект формы<br>
+`get_form_class` - получить класс формы<br>
+`form_valid` - Что делать если форма валидна<br>
+`form_invalid` - Что делать если форма не валидна<br>
+`get_success_url` - Переопределить генерацию урла на который будет совершен переход если форма валидна<br>
 
 
 ## CreateView
@@ -77,7 +112,6 @@ fields = None  # Поля модели, если не указана форма
 - `form_valid()` — дополнительно выполнит такую строку `self.object = form.save()` <br>
 
 Лекция по [CreateView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md#class-createview)
-
 
 
 ## UpdateView

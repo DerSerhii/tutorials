@@ -96,6 +96,8 @@ Django использует типы классов полей, чтобы оп�
 
 Справочник по [параметрам поля модели](https://docs.djangoproject.com/en/4.0/ref/models/fields/#common-model-field-options)
 
+Далее [MTV Model ORM](Django-MTV-Model-ORM.md)
+
 ---
 
 Документация Django - [Модели](https://docs.djangoproject.com/en/4.0/topics/db/models/#module-django.db.models)<br>
