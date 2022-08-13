@@ -132,3 +132,22 @@ def get_initial():
 ```
 
 Лекция по [UpdateView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md)
+
+
+## LoginView
+
+**LoginView** — класс реализующий логику логина.
+
+Основан на *FormView*, если форма не была заменена, то по умолчанию 
+использует `django.contrib.auth.forms.AuthenticationForm`, эта форма содержит 
+два поля: `username` и `password`, проверяет, что данные валидны, и в случае если 
+данные валидны и пользователь активен, добавляет пользователя в объект формы.
+
+Так же в *LoginView* переписан метод `form_valid()`:
+```python
+def form_valid(self, form):
+    """Security check complete. Log the user in."""
+    auth_login(self.request, form.get_user())
+    return HttpResponseRedirect(self.get_success_url())
+```
+Если форма валидна, то провести авторизацию.
