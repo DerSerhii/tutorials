@@ -147,7 +147,7 @@ class EventSerializer(serializers.Serializer):
 ***вложенными***.
 
 Вложенное поле с атрибутом __`many=True`__  означает что оно принимает ***список*** 
-или [***кверисет***](Django-MTV-Model-ORM.md) таких объектов.
+или [***кверисет***](Django/Django-MTV-Model-ORM.md) таких объектов.
 
 
 ### Метод save
