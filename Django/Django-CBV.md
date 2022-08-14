@@ -134,6 +134,16 @@ def get_initial():
 Лекция по [UpdateView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md)
 
 
+## DeleteView
+
+**DeleteView** — класс для удаления объектов.
+
+Не принимает форму! Принимает модель или кверисет, и обязательно url должен 
+принимать идентификатор, для определения объекта.
+
+Лекция по [DeleteView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md#class-deleteview)
+
+
 ## LoginView
 
 **LoginView** — класс реализующий логику логина.
@@ -151,3 +161,5 @@ def form_valid(self, form):
     return HttpResponseRedirect(self.get_success_url())
 ```
 Если форма валидна, то провести авторизацию.
+
+Лекция по [LoginView](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson33.md#class-loginview)
