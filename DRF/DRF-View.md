@@ -1,6 +1,6 @@
 # View DRF
 
-[API](REST%20API.md) [DRF](DRF.md) состоит из 3-х слоев: 
+[API](../REST%20API.md) [DRF](DRF.md) состоит из 3-х слоев: 
 - `Serializer (Сериалайзер)`
 - `View (Вид)` 
 - `Router (Роутер)`

@@ -61,7 +61,7 @@
 ---
 
 ### GIL. Global Interpreter Lock
-[Python Global Interpreter Lock (GIL)](Python-GIL.md) — это своеобразная блокировка, 
+[Python Global Interpreter Lock (GIL)](../Python/Python-GIL.md) — это своеобразная блокировка, 
 позволяющая только одному потоку управлять интерпретатором Python. 
 Это означает, что в любой момент времени будет выполняться только один конкретный поток.
 
