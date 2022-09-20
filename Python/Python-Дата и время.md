@@ -1,4 +1,4 @@
-# Операции с датами
+# Дата и Время
 
 ## Форматирование дат и времени
 
@@ -146,3 +146,6 @@ else:
         check = current_time < refund_end_time
         return check
 ```
+
+---
+Часовые пояса в [Django](../Django/Django-Часовые%20пояса.md)
