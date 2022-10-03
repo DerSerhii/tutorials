@@ -60,9 +60,9 @@
 `list.remove(x)` — удаляет *первый элемент в списке*, имеющий значение `x`. <br>
 (`ValueError`: если такого элемента не существует); <br>
 ```python
->>> list = [3, 1, 4, 1, 5, 9, 2, 6, 5]
->>> list.remove(1)
->>> list
+>>> lst = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+>>> lst.remove(1)
+>>> lst
 [3, 4, 1, 5, 9, 2, 6, 5]
 ```
 Важно:
@@ -74,23 +74,23 @@
   “Error-free” использование метода:
 ```python
 val = 6
-if val in list:
-list.remove(val)
+if val in lst:
+lst.remove(val)
 ```
 Удаление всех вхождений значения в списке:
 ```python
 val = 1
 while val in list:
-list.remove(val)
+lst.remove(val)
 ```
 #### list.pop()
-`list.pop(i)`	 — удаляет `i`-ый элемент и возвращает его. <br>
+`lst.pop(i)`	 — удаляет `i`-ый элемент и возвращает его. <br>
 Если индекс *не указан*, удаляется *последний элемент*. <br>
 ```python
 # Removing the fourth element (index = 3)
-list.pop(3)
+lst.pop(3)
 # Removing the second last element (index = -2)
-list.pop(-2)
+lst.pop(-2)
 ```
 Важно:
 - метод `pop()` принимает один аргумент – индекс списка;
@@ -103,9 +103,9 @@ list.pop(-2)
 Он также может использоваться для удаления элементов из данного списка.
 ```python
 # Removing element from the start (index = 0)
-del list[0]
+del lst[0]
 # Removing element from the last (index = -1)
-del list[-1]
+del lst[-1]
 ```
 Важно:
 - `del` не является методом. Это оператор, который удаляет объект, размещенный после него;
@@ -115,9 +115,9 @@ del list[-1]
   `IndexError: list assignment index out of range`.
 ```python
 # Removing first and second element
-del list[0:2]
+del lst[0:2]
 # Removing last two elements
-del list[-2:]
+del lst[-2:]
 ```
 Важно:
 - чтобы удалить несколько элементов из списка в последовательности, необходимо предоставить ряд
@@ -129,9 +129,9 @@ del list[-2:]
 #### list.clear()
 `list.clear()` — очищает список.
 ```python
->>> list = [3, 1, 4, 1, 5, 9, 2, 6, 5]
->>> list.clear()
->>> list
+>>> lst = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+>>> lst.clear()
+>>> lst
 []
 ```
 
