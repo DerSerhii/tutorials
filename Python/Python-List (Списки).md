@@ -75,13 +75,13 @@
 ```python
 val = 6
 if val in lst:
-lst.remove(val)
+    lst.remove(val)
 ```
 Удаление всех вхождений значения в списке:
 ```python
 val = 1
-while val in list:
-lst.remove(val)
+while val in lst:
+    lst.remove(val)
 ```
 #### list.pop()
 `lst.pop(i)`	 — удаляет `i`-ый элемент и возвращает его. <br>
