@@ -86,7 +86,7 @@ print(...)
     flush: whether to forcibly flush the stream.
 ```
 
-### Встроенные функции с [итератором](Python-Iterator.md)
+### Встроенные функции с [итератором](Python-Iterator&Iterable.md)
 
 - `iter(x)` — возвращает объект итератора (эквивалентно `x.__iter__()`)
 - `next(x)` — возвращает следующий элемент итератора (эквивалентно `x.__next__()`) 
@@ -142,7 +142,7 @@ StopIteration
 [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (6, 'f'), (7, 'g'), (8, 'h'), (9, 'i')]
 ```
 
-- `filter(func, iterable)` — возвращает [итератор](Python-Iterator.md) из тех 
+- `filter(func, iterable)` — возвращает [итератор](Python-Iterator&Iterable.md) из тех 
 элементов, для которых `func` возвращает истину
 ```python
 >>> l = [55, 20, 66, 90, 68, 59, 76, 60, 88, 74, 81, 65, 5, 71]
