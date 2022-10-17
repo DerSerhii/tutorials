@@ -1,16 +1,16 @@
 # Встроенные функции 
 
-### Встроенные функции, выполняющие преобразование типов
+## Преобразование типов
 
 `tuple(object)` — преобразование к [кортежу](Python-Tuple%20(Кортежи).md)
 
-`dict([object])` — преобразование к [словарю](Python-Dict%20(Словари).md)
+`dict(object)` — преобразование к [словарю](Python-Dict%20(Словари).md)
 
-`set([object])` — создает [множество](Python-Set%20(Множество).md)
+`set(object)` — создает [множество](Python-Set%20(Множество).md)
 
 `frozenset([последовательность])` - возвращает [неизменяемое множество](Python-Set%20(Множество).md)
 
-`list([object])` — создает [список](Python-List%20(Списки).md)
+`list(object)` — создает [список](Python-List%20(Списки).md)
 
 `str([object], [кодировка], [ошибки])` — строковое представление объекта. Использует метод `__str__`
 
@@ -22,7 +22,6 @@
      ```python
      >>> a = '1'
      >>> b = 'int'
-
      >>> int(a)
      1
      >>> int(b)
@@ -60,7 +59,18 @@
 
 `delattr(object, name)` — удаляет атрибут с именем `name`
 
-### Встроенные функции для работы в консоли
+- `dir([object])` — пытается вернуть список действительных атрибутов для данного 
+объекта. Если аргумент не предоставлен, то он возвращает список имен в текущем 
+локальном объеме.
+```python
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'd', 'flexiple', 'i', 'j', 'l', 'number', 's']
+>>> l = {1, 2}
+>>> dir(l)
+['__and__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+```
+
+## Встроенные функции для работы в консоли
 
 - `input([prompt])` — возвращает введенную пользователем строку. 
 Prompt - подсказка пользователю
@@ -86,7 +96,7 @@ print(...)
     flush: whether to forcibly flush the stream.
 ```
 
-### Встроенные функции с [итератором](Python-Iterator&Iterable.md)
+## Встроенные функции с [итератором](Python-Iterator&Iterable.md)
 
 - `iter(x)` — возвращает объект итератора (эквивалентно `x.__iter__()`)
 - `next(x)` — возвращает следующий элемент итератора (эквивалентно `x.__next__()`) 
@@ -103,9 +113,7 @@ print(...)
 7
 >>> next(it)
 Traceback (most recent call last):
-  File "C:\Python39\lib\code.py", line 90, in runcode
-    exec(code, self.locals)
-  File "<input>", line 1, in <module>
+    ...
 StopIteration
 ```
 - `zip(*iters)` — итератор, возвращающий [кортежи](Python-Tuple%20(Кортежи).md),
@@ -119,6 +127,7 @@ StopIteration
 >>> list(f)
 [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (6, 'f'), (7, 'g'), (8, 'h'), (9, 'i')]
 ```
+
 - `enumerate(iterable, start=0)` — итератор, возвращающий кортеж из номера и 
 соответствующего члена последовательности
 ```python
@@ -188,7 +197,6 @@ False
 
 `compile(source, filename, mode, flags=0, dont_inherit=False)` — Компиляция в программный код, который впоследствии может выполниться функцией eval или exec. Строка не должна содержать символов возврата каретки или нулевые байты.
 
-`dir([object])` — Список имен объекта, а если объект не указан, список имен в текущей локальной области видимости.
 
 `divmod(a, b)` — Возвращает частное и остаток от деления a на b.
 
@@ -202,12 +210,9 @@ False
 
 `hasattr(object, name)` — Имеет ли объект атрибут с именем 'name'.
 
-
-
 `hex(х)` — Преобразование целого числа в шестнадцатеричную строку.
 
 `id(object)` — Возвращает "адрес" объекта. Это целое число, которое гарантированно будет уникальным и постоянным для данного объекта в течение срока его существования.
-
 
 `isinstance(object, ClassInfo)` — Истина, если объект является экземпляром ClassInfo или его подклассом. Если объект не является объектом данного типа, функция всегда возвращает ложь.
 
@@ -222,8 +227,6 @@ False
 `min(iter, [args ...] * [, key])` — Минимальный элемент последовательности.
 
 `oct(х)` — Преобразование целого числа в восьмеричную строку.
-
-
 
 `ord(с)` — Код символа.
 
