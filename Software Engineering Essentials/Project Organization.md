@@ -48,10 +48,10 @@
 • **manage software configuration** - управление конфигурацией software; <br>
 ***Development:*** <br> 
 • **elicit requirements** - выявления требований; <br>
-• **design system** - проектирование системы (определение *архитектурных паттернов*); <br>
-• **implement software** - внедрение программного обеспечение; <br>
 • **analyze problem** - анализ проблем (определение *паттернов проектирования*); <br>
+• **design system** - проектирование системы (определение *архитектурных паттернов*); <br>
 • **design objects** - проектирование объектов; <br>
+• **implement software** - внедрение программного обеспечение; <br>
 • **test software** - тестирование software (использование *паттернов тестирования*); <br>
 ***Project management:*** <br> 
 • **deliver software** - поставка software; <br>
