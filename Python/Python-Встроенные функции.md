@@ -89,6 +89,7 @@
 
 `range([start=0], stop, [step=1])` — арифметическая прогрессия от `start` до `stop` с шагом `step`
 
+
 ## Встроенные функции для работы с [атрибутами](../ООП-Атрибуты%20классов%20и%20объектов.md) 
 
 `setattr(объект, имя, значение)` — устанавливает атрибут объекта
@@ -97,16 +98,35 @@
 
 `delattr(object, name)` — удаляет атрибут с именем `name`
 
-- `dir([object])` — пытается вернуть список действительных атрибутов для данного 
+- `dir(object)` — возвращает list (список) действительных атрибутов для данного 
 объекта. Если аргумент не предоставлен, то он возвращает список имен в текущем 
 локальном объеме.
 ```python
 >>> dir()
 ['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'd', 'flexiple', 'i', 'j', 'l', 'number', 's']
+
 >>> l = {1, 2}
 >>> dir(l)
 ['__and__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__init_subclass__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
 ```
+- `vars(object)` — возвращает dict (словарь) из атрибутов объекта. Эквивалент: `object.__dict__`  
+Если аргумент не предоставлен - эквивалент: `locals()`
+```python
+>>> class A:
+...     ...
+... 
+>>> a = A()
+>>> a.atr = 10
+>>> vars(a)
+{'atr': 10}
+
+>>> vars()
+{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>}
+
+>>> vars() == locals()
+True
+```
+
 
 ## Встроенные функции для работы в консоли
 
@@ -284,6 +304,9 @@ False
 >>> lst.extend([1,2])
 >>> id(lst)
 140450272770432
+
+>>> id(None)
+94261142246368
 ```
 
 `isinstance(object, ClassInfo)` — Истина, если объект является экземпляром ClassInfo или его подклассом. Если объект не является объектом данного типа, функция всегда возвращает ложь.
@@ -321,5 +344,5 @@ False
 
 `type(name, bases, dict)` — возвращает новый экземпляр класса `name`
 
-`vars([object])` — словарь из атрибутов объекта. По умолчанию - словарь локальных имен.
+
 
