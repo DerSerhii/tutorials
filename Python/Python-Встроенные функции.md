@@ -146,16 +146,24 @@ Traceback (most recent call last):
     ...
 StopIteration
 ```
-- `zip(*iterable)` — создает итератор, который возвращает [tuple(кортежи)](Python-Tuple%20(Кортежи).md),
+- `zip(*iterable, strict=False)` — создает итератор, который возвращает [tuple(кортежи)](Python-Tuple%20(Кортежи).md),
 состоящие из соответствующих элементов аргументов-последовательностей
 ```python
->>> number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
->>> char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+>>> number = [1, 2, 3, 4]
+>>> char = ['a', 'b', 'c', 'd']
 >>> f = zip(number, char)
 >>> f
 <zip object at 0x000002B23351E400>
 >>> list(f)
-[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (6, 'f'), (7, 'g'), (8, 'h'), (9, 'i')]
+[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
+
+>>> list(zip(range(5), range(7)))
+[(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
+
+>>> list(zip(range(5), range(7), strict=True))
+Traceback (most recent call last):
+...
+ValueError: zip() argument 2 is longer than argument 1
 ```
 
 - `enumerate(iterable, start=0)` — создает итератор, возвращающий tuple(кортеж) из номера и 
