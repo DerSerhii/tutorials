@@ -28,44 +28,56 @@ TypeError: unhashable type: 'list'
 ```
 Хотя есть нюанс! ...
 
-## Create ***tuple***
-Создаем пустой кортеж:
-```
->>> a = tuple()   # С помощью встроенной функции tuple()
+## Операции с ***tuple*** и его методы 
+### Create ***tuple***
+Создать **кортеж** можно несколькими способами:<br> 
+
+1. Обработать любой [итерируемый](Python-Iterator&Iterable.md) объект 
+[встроенной функцией](Python-Встроенные%20функции.md)`tuple()`:
+```python
+>>> a = tuple('hello, world!')
+>>> a
+('h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!')
+
+>>> a = tuple()  
 >>> a
 ()
->>> a = ()        # С помощью литерала кортежа
+```
+
+2. С помощью литерала`( )`: 
+```python
+>>> a = ()   
 >>> a
 ()
 ```
-Создаем кортеж из одного элемента:
-```
+***Нюансы*** при создании **кортежа** из *одного* элемента:
+```python
 >>> a = ('s')   # неправильно !
 >>> a
 's'             # получилась строка !!
+>>> type(a)
+<class 'str'>
 
->>> a = ('s', ) # правильно !
+>>> a = ('s',) # правильно !
 >>> a
 ('s',) 
+>>> type(a)
+<class 'tuple'>
+
 
 >>> a = 's',    # можно и так, но лучше со скобками !
 >>> a
 ('s',)
 ```
-Создать кортеж из итерируемого объекта можно с помощью все той же пресловутой функции 
-tuple():
-```
->>> a = tuple('hello, world!')
->>> a
-('h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!')
-```
-### Операции с кортежами
 
-Все операции над [списками](Python-List%20(Списки).md), не изменяющие список
+### Retrieve ***tuple***  
+Все операции над [list (списками)](Python-List%20(Списки).md), не изменяющие список
 
 Гордость программистов на python - поменять местами значения двух переменных:
 
-```a, b = b, a```
+```python
+a, b = b, a
+```
 
 Можна раскрыть кортеж итерируемой распаковкой:
 ```python
@@ -108,10 +120,16 @@ tuple():
 'Simpson'
 >>> named_student_tuple.grade
 'A'
+
 >>> named_student_tuple._asdict()
-OrderedDict([('first', 'Lisa'), ('last', 'Simpson'), ('grade', 'A')])
->>> vars(named_student_tuple)
-OrderedDict([('first', 'Lisa'), ('last', 'Simpson'), ('grade', 'A')])
+{'first': 'Lisa', 'last': 'Simpson', 'grade': 'A'}
+
+>>> vars()['named_student_tuple']
+Student(first='Lisa', last='Simpson', grade='A')
+
+>>> named_student_tuple
+Student(first='Lisa', last='Simpson', grade='A')
+
 >>> new_named_student_tuple = named_student_tuple._replace(first='Bart', grade='C')
 >>> new_named_student_tuple
 Student(first='Bart', last='Simpson', grade='C')
