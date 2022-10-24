@@ -308,7 +308,7 @@ ValueError: zip() argument 2 is longer than argument 1
 ``` 
  
 - `map(func, *iterables)` — создает [генератор](Python-Generator(Генератор).md)
-(итератор), который отдает значения, получившиеся после применения к каждому 
+(ленивый итератор), который отдает значения, получившиеся после применения к каждому 
 элементу последовательности функции`func`<br>
 ```python
 >>> number = [1, 2, 3, 4, 5]
@@ -325,15 +325,24 @@ ValueError: zip() argument 2 is longer than argument 1
 [1, 2, 3, 4, 5]
 ```
 
-- `filter(func, iterable)` — возвращает [итератор](Python-Iterator&Iterable.md) из тех 
-элементов, для которых `func` возвращает истину
+- `filter(func, iterable)` — создает [генератор](Python-Generator(Генератор).md) (ленивый итератор)
+из тех элементов, для которых`func`возвращает`True`
 ```python
 >>> l = [55, 20, 66, 90, 68, 59, 76, 60, 88, 74, 81, 65, 5, 71]
+
 >>> f = filter(lambda x: x > 70, l)
 >>> f
 <filter object at 0x000001BCB8CB6940>
 >>> list(f)
 [90, 76, 88, 74, 81, 71]
+                            
+>>> f = (x for x in l if x > 70) # аналогичное выражение-генератор
+>>> list(f)
+[90, 76, 88, 74, 81, 71]
+
+>>> f = filter(None, [0, '', 'hello', 100, False])
+>>> list(f)
+['hello', 100]
 ```
 
 - `open(file, mode='r', buffering=None, encoding=None, errors=None, newline=None, 
@@ -366,15 +375,20 @@ closefd=True)` — создает итератор, открывает файл 
 
 `ascii(object)` — Как `repr()`, возвращает строку, содержащую представление объекта, но заменяет не-ASCII символы на экранированные последовательности.
 
-- `callable(x)` — возвращает `True` для объекта, поддерживающего вызов (как функции)
+- `callable(x)` — возвращает`True`для объекта, поддерживающего вызов (как функции)
 ```python
 >>> a = print 
 >>> b = 133
+
 >>> callable(a)
 True
 >>> callable(b)
 False
+
+>>> callable(None)
+False
 ```
+
 `chr(x)` — Возвращает односимвольную строку, код символа которой равен x.
 
 `classmethod(x)` — Представляет указанную функцию методом класса.
