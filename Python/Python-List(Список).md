@@ -38,7 +38,7 @@
 >>> l
 ['s', 'p', ['isok'], 2]
 ```
-3) С помощью [List Comprehension (генераторa списков)](Python-List_Comprehension.md): <br>
+3) С помощью [List Comprehension (генераторa списков)](Python-Comprehension.md): <br>
 ```python
 >>> c = [c * 3 for c in 'list']
 >>> c
