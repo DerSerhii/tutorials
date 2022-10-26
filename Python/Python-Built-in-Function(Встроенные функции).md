@@ -204,8 +204,12 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 `abs(x)` — возвращает абсолютную величину (модуль числа)
 
-`range([start=0], stop, [step=1])` — арифметическая прогрессия от`start`до`stop`с шагом`step`
-
+- `range([start=0], stop, [step=1])` — арифметическая прогрессия от`start`до`stop`с 
+шагом`step`
+```python
+>>> [i for i in range(-1, 2)]
+[-1, 0, 1]
+```
 
 ## Встроенные функции для работы с [атрибутами](../ООП-Атрибуты%20классов%20и%20объектов.md) 
 
