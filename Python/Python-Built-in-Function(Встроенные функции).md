@@ -381,7 +381,14 @@ closefd=True)` — создает итератор, открывает файл 
 'baz\n'
 ```
 
-`reversed(object)` — Итератор из развернутого объекта.
+- `reversed(object)` — итератор из развернутого объекта.
+```python
+>>> [i for i in reversed(range(10))]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+>>> reversed(range(3))
+<range_iterator object at 0x7f226c5a72a0>
+```
 
 ## Встроенные функции для работы с [типами данных](Python-Переменные&Типы данных.md)
 - `type(object)` — возвращает тип объекта
