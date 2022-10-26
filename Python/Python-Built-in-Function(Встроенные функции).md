@@ -204,7 +204,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 `abs(x)` — возвращает абсолютную величину (модуль числа)
 
-- `range([start=0], stop, [step=1])` — арифметическая прогрессия от`start`до`stop`с 
+- `range([start=0], stop, [step=1])` — арифметическая прогрессия от`start`до`stop(не включая его)` с 
 шагом`step`
 ```python
 >>> [i for i in range(-1, 2)]
