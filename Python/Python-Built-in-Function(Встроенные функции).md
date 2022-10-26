@@ -1,7 +1,7 @@
 # Встроенные функции Python
 
 ## Преобразование типов
-- `dict(object)` — преобразование к [словарю](Python-DataTypes-Dict(Словарь).md)
+- `dict(iterable)` — преобразование к [словарю](Python-DataTypes-Dict(Словарь).md)
 ```python
 >>> dict(short='dict', long='dictionary')
 {'short': 'dict', 'long': 'dictionary'}
@@ -9,7 +9,7 @@
 >>> dict([(1, 1), (2, 4)])
 {1: 1, 2: 4}
 ```
-- `list(object)` — преобразование к [списку](Python-DataTypes-List(Список).md)
+- `list(iterable)` — преобразование к [списку](Python-DataTypes-List(Список).md)
 ```python
 >>> list('список')
 ['с', 'п', 'и', 'с', 'о', 'к']
@@ -21,22 +21,29 @@
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-- `tuple(object)` — преобразование к [кортежу](Python-DataTypes-Tuple(Кортеж).md)
+- `tuple(iterable)` — преобразование к [кортежу](Python-DataTypes-Tuple(Кортеж).md)
 ```python
 >>> tuple('hello, world!')
 ('h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!')
 ```
 
-- `set(object)` — преобразование к [множеству](Python-DataTypes-Set&FrosenSet(Множество).md)
+- `set(iterable)` — преобразование к [множеству](Python-DataTypes-Set&FrozenSet(Множество).md)
 ```python
 >>> set('hello!')
 {'!', 'e', 'o', 'h', 'l'}
 
->>> set([1,1,1,2,3])
+>>> set([1, 1, 1, 2, 3])
 {1, 2, 3}
 ```
 
-`frozenset([последовательность])` - возвращает [неизменяемое множество](Python-Set%20(Множество).md)
+- `frozenset(iterable)` — преобразование к [неизменяемому множеству](Python-DataTypes-Set&FrozenSet(Множество).md)
+```python
+>>> frozenset('hello!')
+frozenset({'!', 'h', 'e', 'o', 'l'})
+
+>>> frozenset([1, 1, 1, 2, 3])
+frozenset({1, 2, 3})
+```
 
 `str([object], [кодировка], [ошибки])` — строковое представление объекта. Использует метод `__str__`
 

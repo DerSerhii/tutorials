@@ -1,25 +1,57 @@
-# Set & Frozen Set (Множество и Замороженное множество)
+# Set & Frozen Set (Множества)
 
-**Set (Множество)** — это *unordered* (неупорядоченная) коллекция *distinct*
+***Set (Множество)*** — это *unordered* (неупорядоченная) коллекция *distinct*
 (уникальных) объектов. <br>
 
-***Set (Множество)*** — это [mutable (изменяемый)](Python-DataTypes(Типы%20данных).md)
-тип данных, потому не может быть хеширован. <br>
+**Set (Множество)** — это [mutable (изменяемый)](Python-DataTypes(Типы%20данных).md)
+тип данных, потому является *unhashable* (не может быть хеширован). <br>
 
 Обязательные требования для множества: <br>
 • элементы должны быть *hashable* – хешируемыми; <br>
-• элементы должны быть *distinct* – уникальные - не равны`!=`.
+• элементы должны быть *distinct* – уникальные - не равны`!=`между собой.
 
 По факту, **set (множество)** — является [хеш-таблицей](Python-HashTable(HashMaps).md). <br>
 Но отличие от хэш-таблиц [словаря](Python-Dict(Словарь).md) множества
 содержат только «ключи», а не значения.
 
-***Frozen Set (Замороженное множество)*** — это [immutable (неизменяемый)](Python-DataTypes(Типы%20данных).md)
-тип данных.
+Множества удобно использовать для *удаления повторяющихся элементов*:
+```python
+>>> words = ['hello', 'daddy', 'hello', 'mum', 'hello']
+>>> set(words)
+{'hello', 'daddy', 'mum'}
+```
 
-## Операции с ***set*** и его методы 
+***Frozen Set*** — это [immutable (неизменяемый)](Python-DataTypes(Типы%20данных).md)
+эквивалент **set (множества)**. <br>
+Следовательно, является *hashable* (хешируемыми) и может использоваться как ключ словаря
+или элементом множества. 
+```python
+>>> a = set('qwerty')
+>>> b = frozenset('qwerty')
+
+>>> a == b
+True
+
+>>> type(a - b)
+<class 'set'>
+>>> type(a | b)
+<class 'set'>
+
+>>> a.add(1)
+>>> a
+{1, 'e', 'y', 'r', 'q', 'w', 't'}
+
+>>> b.add(1)
+Traceback (most recent call last):
+    ...
+AttributeError: 'frozenset' object has no attribute 'add'
+```
+
+
+
+## Операции с ***Set*** и set.методы 
 ### Create ***set***
-Создать **список** можно несколькими способами:<br> 
+Создать **множество** можно несколькими способами:<br> 
 1) Обработать любой [итерируемый](Python-Iterator&Iterable.md) объект 
 [встроенной функцией](Python-Встроенные%20функции.md)`set()`:
 ```python
@@ -234,7 +266,7 @@ False
 
 `set.add(elem)` — добавляет элемент в множество
 
-### Delete ***set***
+### Delete ***set*** elements
 
 `set.remove(elem)` — удаляет элемент из множества. `KeyError`, если такого элемента не существует
 
@@ -245,36 +277,18 @@ False
 `set.clear()` — очистка множества
 
 
-## Применение множеств
-Множества удобно использовать для удаления повторяющихся элементов:
+## Операции с ***Frozen Set***
+
+### Create ***frozenset***
+Создать **frozenset** можно обработав любой [итерируемый](Python-Iterator&Iterable.md) 
+объект [встроенной функцией](Python-Built-in-Function(Встроенные%20функции).md)`frozenset()`:
 ```python
->>> words = ['hello', 'daddy', 'hello', 'mum', 'hello']
->>> set(words)
-{'hello', 'daddy', 'mum'}
+>>> frozenset('hello!')
+frozenset({'!', 'h', 'e', 'o', 'l'})
+
+>>> frozenset([1, 1, 1, 2, 3])
+frozenset({1, 2, 3})
 ```
+Для **frozenset** нет литерала!
 
 
-### Frozenset
-
-Единственное отличие `set` от `frozenset` заключается в том, что <br>
-`set` — изменяемый тип данных <br>
-`frozenset` - нет <br> 
-Примерно похожая ситуация со [списками](Python-List%20(Списки).md) и [кортежами](Python-Tuple%20(Кортежи).md).
-
-```
->>> a = set('qwerty')
->>> b = frozenset('qwerty')
->>> a == b
-True
-
->>> type(a - b)
-<class 'set'>
->>> type(a | b)
-<class 'set'>
-
->>> a.add(1)
->>> b.add(1)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: 'frozenset' object has no attribute 'add'
-```
