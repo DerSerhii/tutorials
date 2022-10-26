@@ -15,3 +15,11 @@ Traceback (most recent call last):
     ...
 TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 ```
+
+## ValueError
+```python
+>>> range(1, 10, 0)
+Traceback (most recent call last):
+    ...
+ValueError: range() arg 3 must not be zero
+```

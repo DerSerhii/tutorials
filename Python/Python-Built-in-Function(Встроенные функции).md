@@ -209,6 +209,14 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```python
 >>> [i for i in range(-1, 2)]
 [-1, 0, 1]
+
+>>> {i for i in range(1, 10, 2)}
+{1, 3, 5, 7, 9}
+
+>>> range(1, 10, 0)
+Traceback (most recent call last):
+    ...
+ValueError: range() arg 3 must not be zero
 ```
 
 ## Встроенные функции для работы с [атрибутами](../ООП-Атрибуты%20классов%20и%20объектов.md) 
