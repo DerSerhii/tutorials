@@ -1,7 +1,7 @@
 # Встроенные функции Python
 
 ## Преобразование типов
-- `dict(object)` — преобразование к [словарю](Python-Dict(Словарь).md)
+- `dict(object)` — преобразование к [словарю](Python-DataTypes-Dict(Словарь).md)
 ```python
 >>> dict(short='dict', long='dictionary')
 {'short': 'dict', 'long': 'dictionary'}
@@ -9,7 +9,7 @@
 >>> dict([(1, 1), (2, 4)])
 {1: 1, 2: 4}
 ```
-- `list(object)` — преобразование к [списку](Python-List(Список).md)
+- `list(object)` — преобразование к [списку](Python-DataTypes-List(Список).md)
 ```python
 >>> list('список')
 ['с', 'п', 'и', 'с', 'о', 'к']
@@ -21,13 +21,13 @@
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-- `tuple(object)` — преобразование к [кортежу](Python-Tuple(Кортеж).md)
+- `tuple(object)` — преобразование к [кортежу](Python-DataTypes-Tuple(Кортеж).md)
 ```python
 >>> tuple('hello, world!')
 ('h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!')
 ```
 
-- `set(object)` — преобразование к [множеству](Python-Set(Множество).md)
+- `set(object)` — преобразование к [множеству](Python-DataTypes-Set&FrosenSet(Множество).md)
 ```python
 >>> set('hello!')
 {'!', 'e', 'o', 'h', 'l'}

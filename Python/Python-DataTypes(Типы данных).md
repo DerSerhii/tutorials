@@ -17,15 +17,15 @@
 
 **Типы данных** делятся на *две большие* группы:
 - `Mutable (Изменяемые)`
-  - [list (список)](Python-List%20(Списки).md)  
-  - Dict
-  - Set
+  - [list (список)](Python-DataTypes-List(Список).md)  
+  - [dict (словарь)](Python-DataTypes-Dict(Словарь).md)
+  - [set (Set, множество)](Python-DataTypes-Set&FrosenSet(Множество).md)
 - `Immutable (Неизменяемые)`
   - **Numeric**: int, float, complex 
-  - String
+  - [str (String, строка)](Python-DataTypes-Str(Строка).md)
   - Boolean
-  - Tuple
-  - FrozenSet
+  - [tuple ()](Python-DataTypes-Tuple(Кортеж).md)
+  - [frosenset (Frozen Set)](Python-DataTypes-Set&FrosenSet(Множество).md)
   - NoneType
 
 ### Mutable (Изменяемые типы)
