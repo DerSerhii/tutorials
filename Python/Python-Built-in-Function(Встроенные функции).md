@@ -213,6 +213,12 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>> {i for i in range(1, 10, 2)}
 {1, 3, 5, 7, 9}
 
+>>> [i for i in range(10, 0, -1)]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+>>> [i for i in reversed(range(10))]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
 >>> range(1, 10, 0)
 Traceback (most recent call last):
     ...
