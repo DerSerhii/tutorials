@@ -211,6 +211,16 @@ Traceback (most recent call last):
     ...
 ValueError: range() arg 3 must not be zero
 ```
+```python
+>>> for index in [str(i) for i in range(5)]:
+...     f.write(index + '\n')
+...
+Traceback (most recent call last):
+    ...
+    exec(code, self.locals)
+    ...
+ValueError: I/O operation on closed file.
+```
 
 ---
 Лекция [тут](https://github.com/DerSerhii/PythonCources/blob/master/lesson18.md)

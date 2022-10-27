@@ -387,7 +387,8 @@ ValueError: zip() argument 2 is longer than argument 1
 ```
 
 - `open(file, mode='r', buffering=None, encoding=None, errors=None, newline=None,
-  closefd=True)` — создает итератор, открывает файл и возвращает соответствующий [поток](Поток%20%25%20Процесс.md)
+  closefd=True)` — создает итератор, открывает файл и возвращает 
+соответствующий [поток](Поток%20%25%20Процесс.md)
 ```python
 >>> f = open('foo.txt')
 >>> next(f)
