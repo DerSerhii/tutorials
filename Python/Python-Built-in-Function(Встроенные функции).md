@@ -207,17 +207,17 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 - `range([start=0], stop, [step=1])` — арифметическая прогрессия от`start`до`stop(не включая его)` с 
 шагом`step`
 ```python
->>> [i for i in range(-1, 2)]
-[-1, 0, 1]
+>>> frozenset(range(-1,2))
+frozenset({0, 1, -1})
 
->>> {i for i in range(1, 10, 2)}
-{1, 3, 5, 7, 9}
+>>> tuple(range(1,10,2))
+(1, 3, 5, 7, 9)
 
->>> [i for i in range(10, 0, -1)]
-[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+>>> list(reversed(range(11)))
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
->>> [i for i in reversed(range(10))]
-[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+>>> list(range(10,-1,-1))
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 >>> range(1, 10, 0)
 Traceback (most recent call last):
