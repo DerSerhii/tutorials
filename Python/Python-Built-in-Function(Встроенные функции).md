@@ -70,7 +70,6 @@ Traceback (most recent call last):
 ValueError: invalid literal for int() with base 10: 'int'
 ```
 
-
 `bytearray([источник [, кодировка [ошибки]]])` — преобразование к bytearray. Bytearray - изменяемая последовательность 
 целых чисел в диапазоне `0 ≤ x < 256`. Вызванная без аргументов, возвращает пустой 
 массив байт

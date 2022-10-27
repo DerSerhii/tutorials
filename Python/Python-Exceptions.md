@@ -144,6 +144,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: 'sys.txt'
 ```
 
+
 ### SyntaxError
 **SyntaxError** — синтаксическая ошибка
 ```python
@@ -160,6 +161,24 @@ SyntaxError: invalid syntax
           ^
 SyntaxError: unterminated string literal (detected at line 1)
 ```
+```python
+>>> x = 1
+>>> def f(x):
+...     global x
+...     print(x)
+... 
+SyntaxError: name 'x' is parameter and global
+```
+
+#### IndentationError
+```python
+>>> for i in range(3):
+...     if i<2:
+        print(i)    
+...             
+IndentationError: expected an indented block after 'if' statement on line 2
+```
+
 ### TypeError
 **TypeError** — операция применена к объекту несоответствующего типа.
 ```python
@@ -195,3 +214,4 @@ ValueError: range() arg 3 must not be zero
 
 ---
 Лекция [тут](https://github.com/DerSerhii/PythonCources/blob/master/lesson18.md)
+
