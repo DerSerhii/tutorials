@@ -183,4 +183,4 @@ ValueError: range() arg 3 must not be zero
 ```
 
 ---
-Лекция 
+Лекция [тут](https://github.com/DerSerhii/PythonCources/blob/master/lesson18.md)
