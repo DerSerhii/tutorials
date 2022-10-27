@@ -178,7 +178,12 @@ Traceback (most recent call last):
     ...
 TypeError: __init__() should return None, not 'int'
 ```
-
+```python
+>>> 1.23*10^-7
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for ^: 'float' and 'int'
+```
 ### ValueError
 **ValueError** — функция получает аргумент правильного типа, но некорректного значения.
 ```python
