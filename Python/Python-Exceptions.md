@@ -15,6 +15,17 @@ Traceback (most recent call last):
     ...
 TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 ```
+```python
+>>> class Class_A:
+...     def __init__(self, var):
+...             return var
+... 
+>>> obj = Class_A(20)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: __init__() should return None, not 'int'
+```
+
 
 ## ValueError
 ```python
