@@ -153,7 +153,14 @@ FileNotFoundError: [Errno 2] No such file or directory: 'sys.txt'
         ^
 SyntaxError: invalid syntax
 ```
+```python
+>>> print '\'
+  File "<stdin>", line 1
+    print '\'
+          ^
+SyntaxError: unterminated string literal (detected at line 1)
 
+```
 ### TypeError
 **TypeError** — операция применена к объекту несоответствующего типа.
 ```python
