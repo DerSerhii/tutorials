@@ -131,6 +131,11 @@ True
 False
 >>> bool(None)
 False
+
+>>> bool('')
+False
+>>> bool(' ')
+True
 ```
 
 ## Булевые операции
