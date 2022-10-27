@@ -23,3 +23,12 @@ Traceback (most recent call last):
     ...
 ValueError: range() arg 3 must not be zero
 ```
+
+## SyntaxError
+```python
+>>> ord(`100`)
+    ...
+    ord(`100`)
+        ^
+SyntaxError: invalid syntax
+```
