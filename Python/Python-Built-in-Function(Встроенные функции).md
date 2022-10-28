@@ -56,18 +56,44 @@ frozenset({1, 2, 3})
 
 `object()` — возвращает безликий объект, являющийся базовым для всех объектов
 
-- `int([object], [основание системы счисления])` — преобразование к целому числу
+- `int(x, base=10)` — преобразование числа или строки в целое число.<br>
+Возврящает`0`если нет аргументов. <br>
+Если`x`число, то возврящает`x.__int__()`. <br>
+Если число с плавающей точкой, то усекается до целого числа.
+ 
 ```python
->>> a = '1'
->>> b = 'int'
-     
->>> int(a)
+>>> int('1')
 1
 
->>> int(b)
+>>> int(25.65)
+25
+
+>>> int('25.65')
 Traceback (most recent call last):
     ...
-ValueError: invalid literal for int() with base 10: 'int'
+ValueError: invalid literal for int() with base 10: '25.65'
+
+>>> int(float('25.65'))
+25
+
+>>> int()
+0
+
+>>> int('0b100', base=2)
+4
+>>> int('100', base=2)
+4
+```
+
+- `float(x)`— преобразование строки или числа в число с плавающей запятой, если это возможно.
+```python
+>>> float(25.65)
+25.65
+>>> float('25.65')
+25.65
+
+>>> float()
+0.0
 ```
 
 `bytearray([источник [, кодировка [ошибки]]])` — преобразование к bytearray. Bytearray - изменяемая последовательность 
@@ -572,8 +598,6 @@ False
 `print([object, ...], *, sep=" ", end='\n', file=sys.stdout)` — Печать.
 
 `property(fget=None, fset=None, fdel=None, doc=None)`
-
-
 
 `sorted(iterable[, key][, reverse])` — отсортированный список.
 
