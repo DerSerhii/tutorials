@@ -203,6 +203,12 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unsupported operand type(s) for ^: 'float' and 'int'
 ```
+```python
+>>> math.factorial(0.6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'float' object cannot be interpreted as an integer
+```
 ### ValueError
 **ValueError** — функция получает аргумент правильного типа, но некорректного значения.
 ```python
