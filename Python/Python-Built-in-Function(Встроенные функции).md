@@ -599,7 +599,21 @@ False
 
 `property(fget=None, fset=None, fdel=None, doc=None)`
 
-`sorted(iterable[, key][, reverse])` — отсортированный список.
+- `sorted(iterable[, key][, reverse])` — возвращает новый отсортированный список 
+итерируемого объекта (списка, словаря, кортежа).
+```python
+>>> l = [4, 6, 3, 1, 9, 2, 5, 7, 8]
+
+>>> sorted(l)
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> l
+[4, 6, 3, 1, 9, 2, 5, 7, 8]
+
+>>> sorted(l, key=lambda x: x % 2)
+[4, 6, 2, 8, 3, 1, 9, 5, 7]
+>>> l
+[4, 6, 3, 1, 9, 2, 5, 7, 8]
+```
 
 `staticmethod(function)` — статический метод для функции.
 
