@@ -234,6 +234,38 @@ Traceback (most recent call last):
 ValueError: range() arg 3 must not be zero
 ```
 
+- `round(number, n=None)` — округление`number`до`n`знаков после запятой.
+```python
+>>> round(0.5)
+0
+>>> round(1.5)
+2
+>>> round(2.5)
+2
+>>> round(3.5)
+4
+>>> round(4.5)
+4
+
+>>> round(565.5556, -1)
+570.0
+>>> round(565.5556, -2)
+600.0
+>>> round(565.5556, -3)
+1000.0
+
+a = 1/6
+print(a)
+print(round(a, 2))
+
+>>> a = 1/6
+>>> a
+0.16666666666666666
+>>> round(a, 2)
+0.17
+```
+
+
 ## Встроенные функции для работы с [атрибутами](../ООП-Атрибуты%20классов%20и%20объектов.md) 
 
 `setattr(объект, имя, значение)` — устанавливает атрибут объекта
@@ -541,7 +573,7 @@ False
 
 `property(fget=None, fset=None, fdel=None, doc=None)`
 
-`round(X [, N])` — Округление до N знаков после запятой.
+
 
 `sorted(iterable[, key][, reverse])` — отсортированный список.
 
