@@ -424,8 +424,8 @@ ValueError: zip() argument 2 is longer than argument 1
 [1, 2, 3, 4, 5]
 ```
 
-- `filter(func, iterable)` — создает [генератор](Python-Generator(Генератор).md) (ленивый итератор)
-из тех элементов, для которых`func`возвращает`True`
+- `filter(func, iterable)` — создает [генератор](Python-Generator(Генератор).md) 
+(ленивый итератор) из тех элементов, для которых`func`возвращает`True`
 ```python
 >>> l = [55, 20, 66, 90, 68, 59, 76, 60, 88, 74, 81, 65, 5, 71]
 
@@ -445,14 +445,23 @@ ValueError: zip() argument 2 is longer than argument 1
 ```
 
 - `open(file, mode='r', buffering=None, encoding=None, errors=None, newline=None,
-  closefd=True)` — создает итератор, открывает файл и возвращает 
-соответствующий [поток](Поток%20%25%20Процесс.md)
+  closefd=True)` — открывает файл и возвращает поток, представляющий из 
+себя [генератор](Python-Generator(Генератор).md) строк из файла.
 ```python
->>> f = open('foo.txt')
->>> next(f)
-'bar\n'
->>> next(f)
-'baz\n'
+>>> fp = open('foo.txt', 'r')
+
+>>> next(fp)
+'This is 1st line\n'
+>>> next(fp)
+'This is 2nd line\n'
+>>> next(fp)
+'This is 3rd line\n'
+>>> next(fp)
+Traceback (most recent call last):
+    ...
+StopIteration
+
+>>> fp.close()
 ```
 
 - `reversed(object)` — итератор из развернутого объекта.
