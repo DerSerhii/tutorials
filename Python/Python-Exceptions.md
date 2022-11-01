@@ -231,3 +231,10 @@ ValueError: I/O operation on closed file.
 ---
 Лекция [тут](https://github.com/DerSerhii/PythonCources/blob/master/lesson18.md)
 
+```python
+>>> 'serhii'.encode('BCDIC')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: BCDIC
+
+``` 

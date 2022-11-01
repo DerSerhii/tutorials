@@ -174,7 +174,14 @@ TypeError: 'str' object does not support item assignment
 
 `S.lower()`	— преобразование строки к нижнему регистру
 
-`S.startswith(str)`	 — начинается ли строка `S` с шаблона `str`
+- `str.startswith(prefix)`— начинается ли строка`str`с шаблона`prefix`
+```python
+>>> 'python'.startswith('pyt')
+True
+
+>>> 'python'.startswith('pytn')
+False
+```
 
 `S.endswith(str)` — заканчивается ли строка `S` шаблоном `str`
 
