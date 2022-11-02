@@ -99,15 +99,39 @@ KeyError: '1'
 `dict.update([other])` — обновляет словарь, добавляя пары (ключ, значение) из `other`.
 Существующие ключи перезаписываются. Возвращает `None` (не новый словарь!)
 
-### Delete ***dict***
+### Delete ***dict*** item
 
 `dict.clear()` — очищает словарь
 
 `dict.pop(key[, default])` — удаляет ключ и возвращает значение.
 Если ключа нет, возвращает `default` (по умолчанию бросает исключение)
 
-`dict.popitem()` —- удаляет и возвращает пару (ключ, значение).
-Если словарь пуст, бросает исключение`KeyError`. Помните, что словари неупорядочены
+- `dict.popitem()` — удаляет и возвращает пару (ключ, значение). <br>
+Если словарь пуст, бросает исключение`KeyError`. 
+```python
+>>> d = dict(a=1, b=2, c=3)
+>>> d
+{'a': 1, 'b': 2, 'c': 3}
+
+>>> d.popitem()
+('c', 3)
+>>> d
+{'a': 1, 'b': 2}
+
+>>> d.popitem(0)
+Traceback (most recent call last):
+    ...
+TypeError: dict.popitem() takes no arguments (1 given)
+
+>>> empty = {}
+>>> empty
+{}
+
+>>> empty.popitem()
+Traceback (most recent call last):
+    ...
+KeyError: 'popitem(): dictionary is empty'
+```
 
 # OrderedDict
 
