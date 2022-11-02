@@ -183,7 +183,14 @@ True
 False
 ```
 
-`S.endswith(str)` — заканчивается ли строка `S` шаблоном `str`
+- `str.endswith(suffix[, start[, end]]) -> bool` — заканчивается ли строка`str` шаблоном`suffix`
+```python
+>>> 'python'.endswith('on')
+True
+
+>>> 'python'.endswith('om')
+False
+```
 
 `S.join(список)` — сборка строки из списка с разделителем `S`
 
