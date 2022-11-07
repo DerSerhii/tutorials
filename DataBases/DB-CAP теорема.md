@@ -63,7 +63,7 @@ Master узлом, и все записи идут по умолчанию в н
 теряется `availability` всех узлов. Это `CP` система!
 
 ## `AP`: Amazon Dynamo
->Cassandra, CouchDB
+>DynamoDB, Cassandra, CouchDB
 
 ### Посмотрим на Cassandra
 Cassandra использует схему репликации master-master, что фактически 
