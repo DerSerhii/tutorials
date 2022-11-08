@@ -131,6 +131,16 @@ BaseException
 
 `AttributeError: 'frozenset' object has no attribute 'add'`
 
+
+### ImportError
+#### ModuleNotFoundError
+```python
+Traceback (most recent call last):
+    ...
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+```
+
 ### OSError
 **OSError** — ошибка, связанная с системой.
 
