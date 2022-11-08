@@ -1,10 +1,13 @@
 # Команды поиска и сортировки Linux  
-- `find` — поиск файла
+
+## `find`
+**find** — поиск файла
 
 `find /home - name "*.sql"` - поиск в директории /home по имени все с расширением sql <br>
 `find /home - name "ci*.sql"` - поиск в директории /home по имени все, что начинается на ci с расширением sql <br>
 
-- `wc` — word count (количество строк, слов, байт)
+## `wc` 
+**wc** — word count (количество строк, слов, байт)
 
 Пример:<br>
 `wc linux.txt` <br>
@@ -18,35 +21,36 @@
 Пример:<br>
 сортировка по символам (алфавиту):
 ```
-serhii@DerSerhiiUbuntu:~$ cat names.txt
+~$ cat names.txt
 Serhii
 Vlad
 Alex
 
-serhii@DerSerhiiUbuntu:~$ sort names.txt
+~$ sort names.txt
 Alex
 Serhii
 Vlad
 ```
 сортировка по номерам:
 ```
-serhii@DerSerhiiUbuntu:~$ cat numbers.txt
+~$ cat numbers.txt
 99
 1
 125
 
-serhii@DerSerhiiUbuntu:~$ sort numbers.txt
+~$ sort numbers.txt
 1
 125
 99
 
-serhii@DerSerhiiUbuntu:~$ sort -n numbers.txt
+~$ sort -n numbers.txt
 1
 99
 125
 ```
 
-- `cut` — вывести определенное поле из текста
+## `cut`
+Команда **cut** — вывести определенное поле из текста
 
 Синтаксис:<br>
 `cut -d ">" -f 3 filesdata.txt`<br>
@@ -55,4 +59,36 @@ serhii@DerSerhiiUbuntu:~$ sort -n numbers.txt
 `filesdata.txt` - файл
 
 Можно добавить (pipe) | <br>
-`cut -d ">" -f 3 filesdata.txt | sort` - дополнительно отсортирует <br>
+`cut -d ">" -f 3 filesdata.txt | sort` - дополнительно отсортирует 
+
+## `which`
+Команда`which` — используется для определения местоположения данного 
+исполняемого файла, который выполняется при вводе имени исполняемого файла
+(команды) в командной строке терминала. <br>
+Команда выполняет поиск исполняемого файла, указанного в качестве аргумента, 
+в каталогах, перечисленных в переменной среды [PATH](Linux-PATH.md).
+
+Синтаксис`which`команды следующий:
+```python
+which [OPTIONS] FILE_NAME...
+```
+Например, чтобы найти полный путь команды`ping`, вы должны набрать следующее:
+```
+~$ which ping
+/usr/bin/ping
+```
+Можно указать несколько аргументов`which`команды <br>
+Вывод будет включать полные пути к обоим`netcat`и`uptime`исполняемым файлам:
+```
+~$ which netcat uptime
+/usr/bin/netcat
+/usr/bin/uptime
+```
+Поиск выполняется слева направо, и если в каталогах, перечисленных в`PATH`переменной 
+пути, найдено более одного совпадения,`which`будет напечатано только первое. <br>
+Чтобы распечатать все совпадения, используйте`-a`опцию:
+```python
+~$ which -a touch
+/usr/bin/touch
+/bin/touch
+```
