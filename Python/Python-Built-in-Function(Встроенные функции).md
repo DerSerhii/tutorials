@@ -1,7 +1,7 @@
 # Встроенные функции Python
 
 ## Преобразование типов
-- `dict(iterable)` — преобразование к [словарю](Python-DataTypes-Dict(Словарь).md)
+- `dict(iterable)` — преобразование к [словарю](DataTypes/Python-DataTypes-Dict(Словарь).md)
 ```python
 >>> dict(short='dict', long='dictionary')
 {'short': 'dict', 'long': 'dictionary'}
@@ -9,7 +9,7 @@
 >>> dict([(1, 1), (2, 4)])
 {1: 1, 2: 4}
 ```
-- `list(iterable)` — преобразование к [списку](Python-DataTypes-List(Список).md)
+- `list(iterable)` — преобразование к [списку](DataTypes/Python-DataTypes-List(Список).md)
 ```python
 >>> list('список')
 ['с', 'п', 'и', 'с', 'о', 'к']
@@ -21,13 +21,13 @@
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-- `tuple(iterable)` — преобразование к [кортежу](Python-DataTypes-Tuple(Кортеж).md)
+- `tuple(iterable)` — преобразование к [кортежу](DataTypes/Python-DataTypes-Tuple(Кортеж).md)
 ```python
 >>> tuple('hello, world!')
 ('h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!')
 ```
 
-- `set(iterable)` — преобразование к [множеству](Python-DataTypes-Set&FrozenSet(Множество).md)
+- `set(iterable)` — преобразование к [множеству](DataTypes/Python-DataTypes-Set&FrozenSet(Множество).md)
 ```python
 >>> set('hello!')
 {'!', 'e', 'o', 'h', 'l'}
@@ -36,7 +36,7 @@
 {1, 2, 3}
 ```
 
-- `frozenset(iterable)` — преобразование к [неизменяемому множеству](Python-DataTypes-Set&FrozenSet(Множество).md)
+- `frozenset(iterable)` — преобразование к [неизменяемому множеству](DataTypes/Python-DataTypes-Set&FrozenSet(Множество).md)
 ```python
 >>> frozenset('hello!')
 frozenset({'!', 'h', 'e', 'o', 'l'})
@@ -45,7 +45,7 @@ frozenset({'!', 'h', 'e', 'o', 'l'})
 frozenset({1, 2, 3})
 ```
 
-- `str(object, [кодировка], [ошибки])` — преобразование к [строке](Python-DataTypes-Str(Строка).md)<br>
+- `str(object, [кодировка], [ошибки])` — преобразование к [строке](DataTypes/Python-DataTypes-Str(Строка).md)<br>
 Строковое представление объекта (метод`__str__`)
 ```python
 >>> str(1_000)
@@ -292,7 +292,7 @@ print(round(a, 2))
 ```
 
 
-## Операции с [атрибутами](../ООП-Атрибуты%20классов%20и%20объектов.md) 
+## Операции с [атрибутами](../OOP/ООП-Атрибуты%20классов%20и%20объектов.md) 
 
 `setattr(объект, имя, значение)` — устанавливает атрибут объекта
 
@@ -473,21 +473,7 @@ StopIteration
 <range_iterator object at 0x7f226c5a72a0>
 ```
 
-## Встроенные функции для работы с [типами данных](Python-DataTypes(Типы данных).md)
-- `type(object)` — возвращает тип объекта
-```python
->>> a = 10
->>> type(a)
-<class 'int'>
-
->>> type(int)
-<class 'type'>
-
->>> type(type)
-<class 'type'>
-```
-
-## Встроенные функции для работы с [символами](Python-DataTypes-Str(Строка).md)
+## Операції з [символами та стрічками](DataTypes/Python-DataTypes-Str(Строка).md)
 
 - `ord(symbol)` — для символа`symbol`вернет число, из таблицы символов Unicode
 представляющее его позицию. <br>
@@ -540,9 +526,43 @@ StopIteration
 ```
 
 ## Операції з типами (класами)
-- `isinstance(object, type)`— повертає`True`, якщо вказаний *object (об’єкт)* має 
-вказаний *type (тип чи класс)*, інакше`False`. Якщо параметр типу є *кортежем*, ця функція поверне значення`True`, якщо 
-об’єкт є одним із типів у кортежі.
+- class`type(object)`— повертає тип *object (об'єкта)*. <br>
+Значення, що повертається, є об’єктом типу та таким самим об’єктом, 
+який повертає`object.__class__`.
+```python
+>>> a = 10
+>>> type(a)
+<class 'int'>
+>>> a.__class__
+<class 'int'>
+
+>>> type(int)
+<class 'type'>
+
+>>> type(type)
+<class 'type'>
+```
+Для перевірки типу об’єкта рекомендується використовувати`isinstance()`, оскільки вона 
+враховує підкласи.
+
+- class`type(name, bases, dict, **kwds)`— повертає об’єкт нового типу. <br>
+По суті, це динамічна форма оператора`class`. <br> 
+рядок`name`є назвою класу і стає атрибутом `__name__`; <br>
+кортеж`bases`містить базові класи та стає атрибутом`__bases__`, якщо він порожній, то 
+додається`object`, кінцева база всіх класів; <br>
+словник`dict`містить визначення атрибутів і методів для тіла класу, його можна скопіювати 
+або обернути перед тим, як стати атрибутом`__dict__`. <br>
+Наступні два оператори створюють ідентичні об’єкти`type`:
+```python
+class X:
+    a = 1
+
+X = type('X', (), dict(a=1))
+```
+
+- `isinstance(object, type)`— повертає`True`, якщо вказаний *object (об’єкт)* має
+  вказаний *type (тип чи класс)*, інакше`False`. Якщо параметр типу є *кортежем*, ця функція поверне значення`True`, якщо
+  об’єкт є одним із типів у кортежі.
 
 ```python
 >>> isinstance(5, int)
@@ -562,7 +582,6 @@ True
 
 `super([тип [, объект или тип]])` — доступ к родительскому классу
 
-`type(name, bases, dict)` — возвращает новый экземпляр класса `name`
 
 
 ## Другие встроенные функции
