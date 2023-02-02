@@ -1,7 +1,7 @@
 # Встроенные функции Python
 
 ## Преобразование типов
-- `dict(iterable)` — преобразование к [словарю](DataTypes/Python-DataTypes-Dict(Словарь).md)
+- class`dict(iterable)` — преобразование к [словарю](DataTypes/Python-DataTypes-Dict(Словарь).md)
 ```python
 >>> dict(short='dict', long='dictionary')
 {'short': 'dict', 'long': 'dictionary'}
@@ -9,7 +9,7 @@
 >>> dict([(1, 1), (2, 4)])
 {1: 1, 2: 4}
 ```
-- `list(iterable)` — преобразование к [списку](DataTypes/Python-DataTypes-List(Список).md)
+- class`list(iterable)` — преобразование к [списку](DataTypes/Python-DataTypes-List(Список).md)
 ```python
 >>> list('список')
 ['с', 'п', 'и', 'с', 'о', 'к']
@@ -21,13 +21,13 @@
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-- `tuple(iterable)` — преобразование к [кортежу](DataTypes/Python-DataTypes-Tuple(Кортеж).md)
+- class`tuple(iterable)` — преобразование к [кортежу](DataTypes/Python-DataTypes-Tuple(Кортеж).md)
 ```python
 >>> tuple('hello, world!')
 ('h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!')
 ```
 
-- `set(iterable)` — преобразование к [множеству](DataTypes/Python-DataTypes-Set&FrozenSet(Множество).md)
+- class`set(iterable)` — преобразование к [множеству](DataTypes/Python-DataTypes-Set&FrozenSet(Множество).md)
 ```python
 >>> set('hello!')
 {'!', 'e', 'o', 'h', 'l'}
@@ -54,7 +54,7 @@ frozenset({1, 2, 3})
 
 `slice([start=0], stop, [step=1])` — объект среза от `start` до `stop` с шагом `step`
 
-`object()` — возвращает безликий объект, являющийся базовым для всех объектов
+
 
 - `int(x, base=10)` — преобразование числа или строки в целое число.<br>
 Возврящает`0`если нет аргументов. <br>
@@ -329,7 +329,7 @@ print(round(a, 2))
 True
 ```
 
-## Встроенные функции для работы в консоли
+## Операції в консолі
 
 - `input([prompt])` — возвращает введенную пользователем строку. 
 Prompt - подсказка пользователю
@@ -525,7 +525,8 @@ StopIteration
 '10'
 ```
 
-## Операції з типами (класами)
+## Операції з типами ([класами](../OOP/OOP.md))
+
 - class`type(object)`— повертає тип *object (об'єкта)*. <br>
 Значення, що повертається, є об’єктом типу та таким самим об’єктом, 
 який повертає`object.__class__`.
@@ -582,9 +583,24 @@ True
 
 `super([тип [, объект или тип]])` — доступ к родительскому классу
 
+- class`object()`— повертає новий знеособлений (порожній) об'єкт. <br> 
+Клас`object`є основою для всіх класів. Він має [методи](../OOP/OOP-Methods-Методи класів.md), які є *спільними для 
+всіх екземплярів* класів Python. <br>
+Ця функція не приймає жодних аргументів. <br>
+*Примітка:* `object`не має`__dict__`, тому не можна призначити довільні атрибути 
+екземпляру класу`object`.
+```python
+>>> o = object() 
+>>> o
+<object object at 0x7f2a394d90a0>
 
+>>> o.__dict__
+Traceback (most recent call last):
+    ...
+AttributeError: 'object' object has no attribute '__dict__'
+```
 
-## Другие встроенные функции
+## Інші вбудовані функції
 
 - `callable(x)` — возвращает`True`для объекта, поддерживающего вызов (как функции)
 ```python
