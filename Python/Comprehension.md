@@ -3,7 +3,7 @@
 **List Comprehension** — это встроенный механизм ***генерации списков***. 
 
 У него только одна задача — это построить [список](Python-List%20(Списки).md).<br> 
-List Comprehension строит список из любого [итерируемого типа](Python-Iterator&Iterable.md), 
+List Comprehension строит список из любого [итерируемого типа](Functions/Python-Iterator&Iterable.md), 
 преобразуя (фильтруя) поступаемые значения.
 
 Синтаксис:

@@ -13,7 +13,7 @@
 
 - **Behavioral (Поведенческий)** — паттерн для эффективной *коммуникации* между 
 объектами (композиции объектов).<br>
-*Пример:* [Iterator(Итератор)](../Python/Python-Iterator&Iterable.md), 
+*Пример:* [Iterator(Итератор)](../Python/Functions/Python-Iterator&Iterable.md), 
 Strategy(Стратегия), Chain of Responsibility(Цепочка обязанностей), Command(Команда)
 
 
