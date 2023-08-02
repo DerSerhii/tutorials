@@ -34,11 +34,13 @@
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
+        'NAME': 'testproject',
         'USER': 'myuser',
         'PASSWORD': 'mypass',
         'HOST': 'localhost',
         'PORT': '5432',
+        'TEST': {
+            'NAME': 'testdb',
     }
 }
 ```
@@ -57,6 +59,13 @@ DATABASES = {
 ```
 pip install psycopg2  # windows
 pip install psycopg2-binary  # unix
+```
+
+Для тестов используется отдельная база данных, которая будет указана в переменной `TEST`.
+Эта база будет изначально пустая, и будет очищаться после каждого выполненного тест кейса.<br>
+Юзер должен иметь права на создание и очистку базы данных:
+```
+ALTER USER myuser CREATEDB;
 ```
 
 Лекция по моделям [тут](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson30.md)
