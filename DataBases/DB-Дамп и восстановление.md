@@ -5,14 +5,14 @@
 В **PostgreSQL** есть встроенный инструмент для создания резервных копий — 
 утилита `pg_dump`.<br> 
 Утилита имеет простой синтаксис:
-```python
+```
 pg_dump <параметры> <имя базы> > <файл для сохранения копии> 
 ```
 В простейшем случае достаточно указать *имя базы данных*, которую в дальнейшем нужно 
 будет восстановить. <br>
 Резервная копия создается следующей командой:
-```python
-pg_dump eshopdb > /tmp/eshopdb.dump
+```commandline
+pg_dump -h localhost -U postgres cinemadb > ~/Projects/Cinema-Project/dumps/cinema.dump
 ```
 
 ## Утилита pg_restore
@@ -22,16 +22,16 @@ pg_dump eshopdb > /tmp/eshopdb.dump
 Утилита позволяет восстанавливать данные из резервных копий. <br>
 Например, чтобы восстановить только определенную БД, 
 нужно запустить эту утилиту с параметром -d:
-```python
+```commandline
 pg_restore -d eshopdb /tmp/eshopdb.bak
 ```
 Также утилитой pg_restore можно восстановить данные из архивного 
 файла:
-```python
+```commandline
 pg_restore -d eshopdb -Ft /tmp/eshopdb.tar
 ```
 Восстановить данные из дампа также возможно при помощи psql:
-```python
+```commandline
 psql eshopdb < /tmp/eshopdb.dump
 ```
 Подробное описание — [Резервное копирование и восстановление PostgreSQL: 
