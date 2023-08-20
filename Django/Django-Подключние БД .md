@@ -1,29 +1,39 @@
-# Подключение базы данных
+# Подключение базы данных PostgreSQL
 
-Будем использовать PostgreSQL, для этого предварительно нужно эту базу установить.
-
-### Создание базы и пользователя базы
+## Создание базы и пользователя базы
 
 Предположим, что база установлена, и пароль для пользователя `postgres` создан.
 
-Заходим в консоль базы данных.
-
-Под Windows: `psql -U postgres`
-
-Под Linux: `sudo -u postgres psql`
-
+Заходим в консоль базы данных. <br>
+Linux:
+```commandline
+sudo -u postgres psql
+```
+Windows:
+```commandline
+psql -U postgres
+```
 Создаём базу *"mydb"* с кодировкой *'UTF8'*, что бы избежать проблем с русским и другими языками в базе:<br>
-`create database mydb with encoding 'UTF8';`
-
+```commandline
+create database mydb with encoding 'UTF8';
+```
 Создаём пользователя *"myuser"* для пользования этой базой: <br>
-`create user myuser with password 'mypass';`
-
+```commandline
+create user myuser with password 'mypass';
+```
 Даём новому пользователю права для использования новой базой: <br>
-`grant all on database mydb to myuser;`
-
+```commandline
+grant all on database mydb to myuser;
+```
+Для тестов используется отдельная база данных, которая будет указана в переменной `TEST`.
+Эта база будет изначально пустая, и будет очищаться после каждого выполненного тест кейса.<br>
+Юзер должен иметь права на создание и очистку базы данных:
+```commandline
+ALTER USER myuser CREATEDB;
+```
 Для выхода из консоли набираем `\q` и жмем Enter.
 
-### Конфигурация Django
+## Конфигурация Django
 
 Открываем проект, и в нём файл `settings.py`
 
@@ -61,11 +71,6 @@ pip install psycopg2  # windows
 pip install psycopg2-binary  # unix
 ```
 
-Для тестов используется отдельная база данных, которая будет указана в переменной `TEST`.
-Эта база будет изначально пустая, и будет очищаться после каждого выполненного тест кейса.<br>
-Юзер должен иметь права на создание и очистку базы данных:
-```
-ALTER USER myuser CREATEDB;
-```
+
 
 Лекция по моделям [тут](https://github.com/PonomaryovVladyslav/PythonCources/blob/master/lesson30.md)
