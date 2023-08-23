@@ -19,7 +19,10 @@ pg_dump -h localhost -U postgres cinemadb > ~/Projects/Cinema-Project/dumps/cine
 pg_dump -h source_host -U source_user -d source_database -t table1 -t table2 > data_dump.sql
 pg_dump -h localhost -U postgres cinemadb -t cinema_screencinema> ~/Projects/Cinema-Project/dumps/cinema_screen.dump
 ```
-
+Создание дампа данных (только данные) с определенной таблицы в бинарном виде:
+```commandline
+pg_dump -h localhost -U postgres -d cinema_db -t cinema_film --data-only -Fc -f ~/Projects/Cinema-Project/dumps/data_film.dump
+```
 
 ## Утилита pg_restore
 Базу данных потребуется создать перед восстановлением и пользователя 
